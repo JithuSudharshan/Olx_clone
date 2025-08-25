@@ -1,0 +1,57 @@
+/* ===== MAIN CATEGORY BAR ===== */
+.main {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 6px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+  height: 30px;
+  white-space: nowrap; /* keep everything in one line */
+}
+
+/* ===== ALL CATEGORIES ===== */
+.category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.category img {
+  width: 12px;
+}
+.category h5{
+    font-size: 15px;
+}
+
+/* ===== CATEGORY LIST ===== */
+.rest-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rest-list p {
+  font-size: 15px;
+  color:black;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
+}
+
+.rest-list p:hover {
+  color: rgb(39, 137, 248);
+}

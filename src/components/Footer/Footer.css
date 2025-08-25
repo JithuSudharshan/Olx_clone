@@ -1,0 +1,125 @@
+/* Main footer wrapper */
+.footer-main {
+  width: 100%;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+/* First row (links + social) */
+.footer_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 60px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Left grouped sections */
+.main-section {
+  display: flex;
+  gap: 60px;
+}
+
+.main-section section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.main-section section p {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.main-section section p:hover {
+  color: #000;
+}
+
+/* Right part: social + apps */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-right p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.social_handles {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.social_handles img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social_handles img:hover {
+  transform: scale(1.1);
+}
+
+.download_app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.download_app img {
+  width: 140px;
+  cursor: pointer;
+}
+
+/* Second row (brand banner) */
+.footer_2 {
+  background-color: #002f86;
+  padding: 25px 60px;
+  color: white;
+}
+
+.brand-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.group-icon img {
+  height: 40px;
+}
+
+.rest-logo {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rest-logo img {
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+.copright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.copright p {
+  margin: 2px 0;
+}
