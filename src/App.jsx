@@ -1,12 +1,17 @@
-import React from 'react'
-import Home from './pages/Home/Home'
+import React from "react";
+import Home from "./pages/Home/Home";
+import { Routes, Route } from "react-router";
+import Login from "./components/Login/Login";
 
 const App = () => {
   return (
     <div>
-      <Home/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />}/>
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

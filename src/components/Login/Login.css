@@ -1,0 +1,88 @@
+
+.login-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 30px 25px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+
+.login-modal img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+
+.login-form h1 {
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  margin-bottom: 20px;
+}
+
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: rgb(1, 99, 196);
+  box-shadow: 0 0 4px rgba(7, 114, 236, 0.4);
+}
+
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background: rgb(1, 99, 196);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background: rgb(33, 134, 249);
+}
+
+
+.form-switch {
+  margin-top: 25px;
+  margin-bottom: 35px;
+  font-size: 14px;
+  color: #555;
+}
+
+.form-switch span {
+  color: #002f34;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.card-text {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #777;
+  line-height: 1.5;
+}
+

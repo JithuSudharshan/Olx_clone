@@ -1,0 +1,18 @@
+.home-content{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.nav-bar {
+  width: 100%;          
+  background: #fff;       
+  padding: 8px 20px;       
+  display: flex;            
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;  
+}
+.banner-img{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

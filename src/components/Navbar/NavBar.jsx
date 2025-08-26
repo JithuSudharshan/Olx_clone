@@ -11,7 +11,7 @@ import user_icon from "../../assets/user_icon.svg";
 import sell_ring from "../../assets/sell_ring.png";
 import plus_icon from "../../assets/plus_icon.svg"
 
-const NavBar = () => {
+const NavBar = ({}) => {
   return (
     <div className="nav-bar">
       <img src={logo} alt="" />

@@ -59,8 +59,8 @@ const Footer = () => {
             <img src={linkedin_icon} alt="" />
           </div>
           <div className="download_app">
-            <img src={playstore_icon} alt="" />
-            <img src={appstore_icon} alt="" />
+            <img src={playstore_icon} className="playstore_icon" alt="" />
+            <img src={appstore_icon} className="appstore_icon" alt="" />
           </div>
         </div>
       </div>
@@ -77,14 +77,13 @@ const Footer = () => {
             <img src={cartrade_logo} alt="" />
             <img src={mobility_logo} alt="" />
           </div>
-          <div className="copright">
-            <p>help-sitemap</p>
-            <p>All rights reserved © 2006-2025 OLX</p>
-          </div>
+        </div>
+        <div className="copright">
+          <p>help-sitemap</p>
+          <p>All rights reserved © 2006-2025 OLX</p>
         </div>
       </div>
     </div>
   );
 };
-
 export default Footer;

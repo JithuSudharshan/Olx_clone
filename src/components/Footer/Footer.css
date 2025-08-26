@@ -1,4 +1,3 @@
-/* Main footer wrapper */
 .footer-main {
   width: 100%;
   background-color: #f8f9fa;
@@ -6,17 +5,16 @@
   flex-direction: column;
   font-family: "Roboto", Arial, sans-serif;
 }
-
-/* First row (links + social) */
 .footer_1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px 60px;
   border-bottom: 1px solid #e0e0e0;
+  min-height: 230px;
 }
 
-/* Left grouped sections */
+
 .main-section {
   display: flex;
   gap: 60px;
@@ -41,7 +39,7 @@
   color: #000;
 }
 
-/* Right part: social + apps */
+
 .footer-right {
   display: flex;
   flex-direction: column;
@@ -75,46 +73,61 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 
 .download_app img {
-  width: 140px;
   cursor: pointer;
 }
+.download_app .playstore_icon{
+  width: 150px;
+}
+.download_app .appstore_icon{
+  width: 135px;
+  margin-left: 10px;
+  position: absolute;
+  top: 15%;
+}
 
-/* Second row (brand banner) */
+
+
+
+
 .footer_2 {
-  background-color: #002f86;
+  background-color: #0440af;
   padding: 25px 60px;
   color: white;
+  min-height: 200px;
 }
 
 .brand-banner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
 .group-icon img {
-  height: 40px;
+  height: 100px;
 }
 
 .rest-logo {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .rest-logo img {
-  height: 32px;
+  height: 75px;
   filter: brightness(0) invert(1);
 }
 
 .copright {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 700px;
   align-items: flex-end;
   font-size: 12px;
   margin-top: 10px;
