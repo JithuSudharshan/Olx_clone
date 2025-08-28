@@ -179,7 +179,7 @@ function Cards() {
                       <span className="product-price">
                         {formatPrice(product.price)}
                       </span>
-                      <Link to={`/productdetails/:${product.id}`} ><button className="details-button">View Details</button></Link>
+                      <Link to={`/productdetails/${product.id}`} ><button className="details-button">View Details</button></Link>
                     </div>
                   </div>
                 </div>

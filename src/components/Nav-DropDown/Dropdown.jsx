@@ -18,9 +18,9 @@ import { useAuth } from "../../context/AuthProvider";
 const Dropdown = () => {
   const { setIsLoggedIn , setIsClick_profile } = useAuth();
 
-  const handleLogOut = () => {
+  const handleLogOut = async() => {
     try {
-      logOut();
+      await logOut();
       setIsClick_profile(false)
       setIsLoggedIn(false);
     } catch (error) {

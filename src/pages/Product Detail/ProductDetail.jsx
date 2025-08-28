@@ -19,6 +19,12 @@ import mercedesImg from "../../assets/Images/Products_image/mercedesImg.jpg";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/Navbar/NavBar";
 import NavBand from "../../components/Navband/NavBand";
+import user_icon from "../../assets/Images/Product_details/businessman .png";
+import user_grey from "../../assets/Images/Product_details/user _grey.png"
+import user_blue from "../../assets/Images/Product_details/user_blue.png"
+import loc_icon from "../../assets/Images/Product_details/placeholder.png";
+import heart_icon from "../../assets/Images/Product_details/heart.png"
+import share_icon from "../../assets/Images/Product_details/share.png"
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -154,27 +160,73 @@ const ProductDetail = () => {
     cat.products.map((p) => ({ ...p, category: cat.category }))
   );
 
+
   // find product by id
   const item = allProducts.find((p) => p.id === parseInt(id));
+  
 
   useEffect(() => {
     setSelectedItem(item);
+    console.log(selectedItem)
   }, [id]);
+
+  if(selectedItem === null){
+    return(
+      <p>item loading.....</p>
+    )
+  }
 
   return (
     <div className="main-container">
       <NavBar />
       <div className="navband">
-     
         <NavBand />
       </div>
       <div className="product-details">
-        {/* Products-details to be added */}
+        <img src={heart_icon} alt="" />
+        <img src={share_icon} alt="" />
+        <div className="product-main">
+          <div className="div-left">
+            <img src={selectedItem.image} alt="" />
+            <div className="img-small">
+              <img src={selectedItem.image} alt="" />
+              <img src={selectedItem.image} alt="" />
+              <img src={selectedItem.image} alt="" />
+            </div>
+            <div className="description">
+              <h3>Description</h3>
+              <p>{selectedItem.description}</p>
+            </div>
+          </div>
+          <div className="div-right">
+            <div className="price-details">
+              <h4>Price</h4>
+              <p>{`₹ ${selectedItem.price}`}</p>
+            </div>
+            <div className="seller-info">
+              <h3>Seller Information</h3>
+              <img src={user_grey} alt="" />
+              <h2>Private Seller</h2>
+              <p>Member Since 2022</p>
+              <div className="loc">
+                <img src={loc_icon} alt="" />
+                <p>Punjab</p>
+              </div>
+            </div>
+            <div className="buttons">
+              <button>Call the seller</button>
+              <button>Chat with Seller</button>
+            </div>
+            <div className="safety">
+              Meet seller in a safe location. Inspect the item before you
+              buy.Pay only after collecting the item.
+            </div>
+          </div>
+        </div>
       </div>
-      
+
       <div className="disclaimer">
         <p>
-          
           Disclaimer: Please note that OLX serves as online marketplace and
           intermediary and merely providing the platform to the listers to list
           their businesses. The products listed on our platform are provided by

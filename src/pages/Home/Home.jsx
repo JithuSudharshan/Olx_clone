@@ -12,7 +12,7 @@ import { login } from "../../firebase/firebase";
 
 
 const Home = () => {
-  const {isClick_profile , isclickLogin  } = useAuth();
+  const {isClick_profile , isclickLogin , setIsClick_profile  } = useAuth();
   return (
     <div className="home">
       <div className="nav-bar">
@@ -23,7 +23,7 @@ const Home = () => {
 
       {isClick_profile?<Dropdown/>:<></>}
       
-      <div className="home-content">
+      <div onClick={()=>setIsClick_profile(false)} className="home-content">
         <NavBand />
         <div className="banner-img">
           <div>
