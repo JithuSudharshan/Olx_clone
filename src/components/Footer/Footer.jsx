@@ -1,19 +1,19 @@
 import React from "react";
 import "../Footer/Footer.css";
-import facbook_icon from "../../assets/facebook_icon.svg";
-import instagram_icon from "../../assets/instagram_icon.svg";
-import youtube_icon from "../../assets/youtube_icon.svg";
-import whatsapp_icon from "../../assets/whatsapp_icon.svg";
-import twitter_icon from "../../assets/twitter_icon.svg";
-import linkedin_icon from "../../assets/linkedin_icon.svg";
-import playstore_icon from "../../assets/playstore.png";
-import appstore_icon from "../../assets/appstore.png";
-import carTradeGroup_logo from "../../assets/cartrade_tech.svg";
-import olx_logo from "../../assets/olx_2025.svg";
-import carwale_logo from "../../assets/carwale.svg";
-import bikewale_logo from "../../assets/bikewale.svg";
-import cartrade_logo from "../../assets/cartrade.svg";
-import mobility_logo from "../../assets/mobility.svg";
+import facbook_icon from "../../assets/Images/Card_image/facebook_icon.svg";
+import instagram_icon from "../../assets/Images/Card_image/instagram_icon.svg";
+import youtube_icon from "../../assets/Images/Card_image/youtube_icon.svg";
+import whatsapp_icon from "../../assets/Images/Card_image/whatsapp_icon.svg";
+import twitter_icon from "../../assets/Images/Card_image/twitter_icon.svg";
+import linkedin_icon from "../../assets/Images/Card_image/linkedin_icon.svg";
+import playstore_icon from "../../assets/Images/Card_image/playstore.png";
+import appstore_icon from "../../assets/Images/Card_image/appstore.png";
+import carTradeGroup_logo from "../../assets/Images/Card_image/cartrade_tech.svg";
+import olx_logo from "../../assets/Images/Card_image/olx_2025.svg";
+import carwale_logo from "../../assets/Images/Card_image/carwale.svg";
+import bikewale_logo from "../../assets/Images/Card_image/bikewale.svg";
+import cartrade_logo from "../../assets/Images/Card_image/cartrade.svg";
+import mobility_logo from "../../assets/Images/Card_image/mobility.svg";
 
 const Footer = () => {
   return (

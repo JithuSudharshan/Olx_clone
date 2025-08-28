@@ -1,20 +1,63 @@
 import React, { useState } from "react";
 import "../Login/Login.css";
-import olx_logo from "../../assets/olx_logo.svg";
+import olx_logo from "../../assets/Images/Card_image/olx_logo.svg";
+import { signUp, login } from "../../firebase/firebase";
 
 const Login = () => {
+
   const [loggedState, setLoggedState] = useState("Sign Up");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  //Authentication on FormData
+  const user_auth = async(event)=>{
+    event.preventDefault();
+    if(loggedState === "Sign In"){
+      login(email,password);
+    }else{
+      signUp(name,email,password);
+    }
+  }
+
   return (
     <div className="login-modal">
       <img src={olx_logo} alt="" />
       <div className="login-form">
         <h1>{loggedState}</h1>
+
+        {/* FORM Skelton */}
         <form>
-            {loggedState === "Sign Up" ? <input type="text" placeholder="Enter your name" />: <></>}
-          
-          <input type="text" placeholder="Enter your Email" />
-          <input type="text" placeholder="Enter your password" />
-          <button type="submit">Sign Up</button>
+          {loggedState === "Sign Up" ? (
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              placeholder="Your Name"
+            />
+          ) : (
+            <></>
+          )}
+
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Password"
+          />
+          <button onClick={user_auth} type="submit">{loggedState}</button>
         </form>
       </div>
       <div className="form-switch">

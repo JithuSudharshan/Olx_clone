@@ -1,5 +1,6 @@
-import { useState } from "react";
-import "../Cards/Cards.css";
+import React, { useEffect, useState } from "react";
+import "../Product Detail/ProductDetail.css";
+import { useParams } from "react-router";
 import toyotoImg from "../../assets/Images/Products_image/toyotaImg.jpeg";
 import teslaImg from "../../assets/Images/Products_image/teslaImg.jpg";
 import fordImg from "../../assets/Images/Products_image/fordImg.jpeg";
@@ -15,11 +16,13 @@ import beachpropImg from "../../assets/Images/Products_image/beachpropImg.jpg";
 import porscheImg from "../../assets/Images/Products_image/porscheImg.jpeg";
 import rangeroverImg from "../../assets/Images/Products_image/rangeroverImg.webp";
 import mercedesImg from "../../assets/Images/Products_image/mercedesImg.jpg";
-import { Link } from "react-router";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/Navbar/NavBar";
+import NavBand from "../../components/Navband/NavBand";
 
-function Cards() {
-
-  // Product data grouped by category
+const ProductDetail = () => {
+  const { id } = useParams();
+  const [selectedItem, setSelectedItem] = useState(null);
   const productsByCategory = [
     {
       category: "Cars",
@@ -147,49 +150,46 @@ function Cards() {
       ],
     },
   ];
+  const allProducts = productsByCategory.flatMap((cat) =>
+    cat.products.map((p) => ({ ...p, category: cat.category }))
+  );
 
-  // Convert price to INR format
-  const formatPrice = (price) => {
-    return `₹${price.toLocaleString()}`;
-  };
+  // find product by id
+  const item = allProducts.find((p) => p.id === parseInt(id));
+
+  useEffect(() => {
+    setSelectedItem(item);
+  }, [id]);
 
   return (
-    <div className="cards-container">
-      {/* Loop through product categories and display each */}
-      <div className="categories-wrapper">
-        {productsByCategory.map((categoryGroup) => (
-          <div key={categoryGroup.category} className="category-block">
-            <h2 className="category-title">{categoryGroup.category}</h2>
-
-            <div className="products-grid">
-              {categoryGroup.products.map((product) => (
-                <div
-                  key={product.id}
-                  className="product-card"
-                >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="product-image"
-                  />
-                  <div className="product-info">
-                    <h3 className="product-name">{product.name}</h3>
-                    <p className="product-description">{product.description}</p>
-                    <div className="product-footer">
-                      <span className="product-price">
-                        {formatPrice(product.price)}
-                      </span>
-                      <Link to={`/productdetails/:${product.id}`} ><button className="details-button">View Details</button></Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+    <div className="main-container">
+      <NavBar />
+      <div className="navband">
+     
+        <NavBand />
       </div>
+      <div className="product-details">
+        {/* Products-details to be added */}
+      </div>
+      
+      <div className="disclaimer">
+        <p>
+          
+          Disclaimer: Please note that OLX serves as online marketplace and
+          intermediary and merely providing the platform to the listers to list
+          their businesses. The products listed on our platform are provided by
+          third party i.e listers with the pricing marked at their discretion.
+          We do not verify the authenticity or quality of these products, and we
+          make no representations or warranties regarding their genuineness. By
+          using our platform, you acknowledge that any purchase made is at your
+          own risk, and we are not liable for any issues related to product
+          authenticity, quality, or performance. We encourage users to exercise
+          caution and discretion before making any payments to the listers{" "}
+        </p>
+      </div>
+      <Footer />
     </div>
   );
-}
+};
 
-export default Cards;
+export default ProductDetail;

@@ -1,6 +1,6 @@
 import React from "react";
 import "../Navband/NavBand.css";
-import angle_icon from "../../assets/angle_icon.svg";
+import angle_icon from "../../assets/Images/Card_image/angle_icon.svg";
 
 const NavBand = () => {
   return (

@@ -1,22 +1,22 @@
-/* ===== NAVBAR CONTAINER ===== */
 .nav-bar {
   display: flex;
+  top: 0;
+  left: 0;
   align-items: center;
+  position: fixed;
   justify-content: space-evenly;
   padding: 6px 16px;
   border-bottom: 1px solid #e5e7eb;
   background-color: #fff;
   font-family: Arial, sans-serif;
- 
+  z-index: 1000;
 }
 
-/* ===== LOGO ===== */
 .nav-bar > img {
   height: 60px;
   cursor: pointer;
 }
 
-/* ===== LOCATION SEARCH ===== */
 .location {
   display: flex;
   align-items: center;
@@ -46,7 +46,6 @@
   cursor: pointer;
 }
 
-/* ===== MAIN SEARCH BOX ===== */
 .search_item {
   display: flex;
   align-items: center;
@@ -81,7 +80,6 @@
   width: 20px;
 }
 
-/* ===== RIGHT SECTION ===== */
 .nav-right {
   display: flex;
   align-items: center;
@@ -96,7 +94,7 @@
   cursor: pointer;
   margin-right: 10px;
 }
-.language p{
+.language p {
   font-weight: bold;
   font-size: larger;
 }
@@ -117,7 +115,6 @@
   cursor: pointer;
 }
 
-/* ===== SELL BUTTON ===== */
 .sell-btn {
   position: relative;
   width: 90px;
@@ -134,7 +131,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  pointer-events: none; /* keeps ring non-clickable */
+  pointer-events: none;
 }
 
 .sell-inner {
@@ -142,15 +139,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px; /* spacing between + and SELL */
+  gap: 6px;
   font-weight: 700;
   font-size: 14px;
   color: #002f34;
-  z-index: 1; /* ensures it's above the ring */
+  z-index: 1;
 }
 
 .sell-inner img {
   width: 14px;
-  position: relative; /* prevent overlap */
+  position: relative;
 }
-

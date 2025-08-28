@@ -3,16 +3,22 @@ import "../Home/Home.css";
 import NavBar from "../../components/Navbar/NavBar";
 import NavBand from "../../components/Navband/NavBand";
 import Footer from "../../components/Footer/Footer";
-import banner_img from "../../assets/banner.jpg";
+import banner_img from "../../assets/Images/Card_image/banner.jpg";
 import Cards from "../../components/Cards/Cards";
+import { useAuth } from "../../context/AuthProvider";
+import Dropdown from "../../components/Nav-DropDown/Dropdown";
 
 
 const Home = () => {
+  const {isClick_profile} = useAuth();
   return (
     <div className="home">
       <div className="nav-bar">
         <NavBar />
       </div>
+
+      {isClick_profile?<Dropdown/>:<></>}
+      
       <div className="home-content">
         <NavBand />
         <div className="banner-img">
