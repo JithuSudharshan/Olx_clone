@@ -10,16 +10,17 @@ import bell_icon from "../../assets/Images/Card_image/bell_icon.svg";
 import user_icon from "../../assets/Images/Card_image/user_icon.svg";
 import sell_ring from "../../assets/Images/Card_image/sell_ring.png";
 import plus_icon from "../../assets/Images/Card_image/plus_icon.svg";
-import { Link } from "react-router";
 import { useAuth } from "../../context/AuthProvider";
 
-const NavBar = ({}) => {
+const NavBar = () => {
   //from useContext
-  const { isClick_profile, setIsClick_profile } = useAuth();
+  const { isClick_profile, setIsClick_profile, isLoggedIn ,setIsClickLogin , isclickLogin} = useAuth();
 
   const open_feautures_Modal = () => {
-    setIsClick_profile((prvs) => (prvs = !prvs)); 
-    console.log(isClick_profile);
+    setIsClick_profile((prvs) => (prvs = !prvs));
+  };
+  const open_login_modal = () => {
+    setIsClickLogin(true)
   };
 
   return (
@@ -48,9 +49,13 @@ const NavBar = ({}) => {
           <img src={heart_icon} alt="" />
           <img src={comment_icon} alt="" />
           <img src={bell_icon} alt="" />
-          <Link onClick={open_feautures_Modal}>
-            <img src={user_icon} alt="" />
-          </Link>
+          {isLoggedIn ? (
+            <img onClick={open_feautures_Modal} src={user_icon} alt="" />
+          ) : (
+            <p onClick={open_login_modal} className="login">
+              Login
+            </p>
+          )}
           <div className="sell-btn">
             <img src={sell_ring} alt="" />
             <div className="sell-inner">

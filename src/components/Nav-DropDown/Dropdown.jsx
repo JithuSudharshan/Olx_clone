@@ -12,8 +12,22 @@ import settings_icon from "../../assets/Images/Nav-feauture icons/setting.png";
 import install_icon from "../../assets/Images/Nav-feauture icons/dowload.png";
 import logout_icon from "../../assets/Images/Nav-feauture icons/power-off.png";
 import { Link } from "react-router";
+import { logOut } from "../../firebase/firebase";
+import { useAuth } from "../../context/AuthProvider";
 
 const Dropdown = () => {
+  const { setIsLoggedIn , setIsClick_profile } = useAuth();
+
+  const handleLogOut = () => {
+    try {
+      logOut();
+      setIsClick_profile(false)
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.log(error);
+      alert(error);
+    }
+  };
   return (
     <div className="dropdown">
       <div className="profile-picture">
@@ -21,7 +35,7 @@ const Dropdown = () => {
       </div>
       <h1>SAM ALTMAN</h1>
       <Link to="/profile">
-      <button>View and edit profile</button>
+        <button>View and edit profile</button>
       </Link>
       <div className="features">
         <div className="My-ads">
@@ -60,7 +74,7 @@ const Dropdown = () => {
           <img src={install_icon} alt="" />
           <p>Install OLX Lite app</p>
         </div>
-        <div className="logout">
+        <div onClick={handleLogOut} className="logout">
           <img src={logout_icon} alt="" />
           <p>Logout</p>
         </div>

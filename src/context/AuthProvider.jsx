@@ -5,21 +5,26 @@ import App from "../App.jsx";
 const AuthProvider = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isClick_profile, setIsClick_profile] = useState(false);
-
-  const login = () => setIsLoggedIn(true);
-  const logout = () => setIsLoggedIn(false);
+  const [isclickLogin, setIsClickLogin] = useState(false);
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, login, logout, isClick_profile, setIsClick_profile }}
+      value={{
+        isLoggedIn,
+        setIsLoggedIn,
+        isClick_profile,
+        setIsClick_profile,
+        isclickLogin,
+        setIsClickLogin,
+      }}
     >
       <App />
     </AuthContext.Provider>
-  )
-}
+  );
+};
 
 export const useAuth = () => {
   return useContext(AuthContext);
-}
+};
 
 export default AuthProvider;

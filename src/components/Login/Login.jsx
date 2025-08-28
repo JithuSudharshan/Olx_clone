@@ -2,26 +2,45 @@ import React, { useState } from "react";
 import "../Login/Login.css";
 import olx_logo from "../../assets/Images/Card_image/olx_logo.svg";
 import { signUp, login } from "../../firebase/firebase";
+import Cross_icon from "../../assets/Images/profile page-icons/x-button.png";
+import { useAuth } from "../../context/AuthProvider";
 
 const Login = () => {
-
   const [loggedState, setLoggedState] = useState("Sign Up");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //Authentication on FormData
-  const user_auth = async(event)=>{
+  const { setIsClickLogin , setIsLoggedIn} = useAuth();
+
+  //Authentication on FormData using Firebase
+  const user_auth = async (event) => {
     event.preventDefault();
-    if(loggedState === "Sign In"){
-      login(email,password);
-    }else{
-      signUp(name,email,password);
+    try {
+      if (loggedState === "Sign In") {
+      await login(email, password);
+      setIsClickLogin(false);
+      setIsLoggedIn(true);
+
+    } else {
+      await signUp(name, email, password);
     }
-  }
+    } catch (error) {
+      console.log(error)
+      alert(error)
+    }
+
+    
+  };
 
   return (
     <div className="login-modal">
+      <img
+        onClick={() => setIsClickLogin(false)}
+        className="cancel"
+        src={Cross_icon}
+        alt=""
+      />
       <img src={olx_logo} alt="" />
       <div className="login-form">
         <h1>{loggedState}</h1>
@@ -57,7 +76,9 @@ const Login = () => {
             }}
             placeholder="Password"
           />
-          <button onClick={user_auth} type="submit">{loggedState}</button>
+          <button onClick={user_auth} type="submit">
+            {loggedState}
+          </button>
         </form>
       </div>
       <div className="form-switch">

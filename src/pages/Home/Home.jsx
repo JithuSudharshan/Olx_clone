@@ -7,14 +7,18 @@ import banner_img from "../../assets/Images/Card_image/banner.jpg";
 import Cards from "../../components/Cards/Cards";
 import { useAuth } from "../../context/AuthProvider";
 import Dropdown from "../../components/Nav-DropDown/Dropdown";
+import Login from "../../components/Login/Login";
+import { login } from "../../firebase/firebase";
 
 
 const Home = () => {
-  const {isClick_profile} = useAuth();
+  const {isClick_profile , isclickLogin  } = useAuth();
   return (
     <div className="home">
       <div className="nav-bar">
-        <NavBar />
+        <NavBar
+        
+        />
       </div>
 
       {isClick_profile?<Dropdown/>:<></>}
@@ -30,6 +34,9 @@ const Home = () => {
           <Cards/>
         </div>
         <Footer />
+      </div>
+      <div>
+        {isclickLogin?<Login/>:<></>}
       </div>
     </div>
   );

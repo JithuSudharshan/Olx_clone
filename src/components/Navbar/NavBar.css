@@ -11,6 +11,12 @@
   font-family: Arial, sans-serif;
   z-index: 1000;
 }
+.login{
+  text-decoration: underline;
+  font-weight:600;
+  font-size: 18px;
+  color: black;
+}
 
 .nav-bar > img {
   height: 60px;
