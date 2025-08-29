@@ -9,6 +9,7 @@ import BrandFooter from "../../components/Footer/BrandFooter.jsx";
 import { uploadManyToCloudinary } from "../../Cloudinary/cloudinary.js";
 import cross_icon from "../../assets/Images/profile page-icons/x-button.png";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../context/AuthProvider.jsx";
 
 const PostAd = () => {
   const [title, setTitle] = useState("");
@@ -18,6 +19,8 @@ const PostAd = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const {user}= useAuth();
 
   const storage = getStorage();
 
@@ -38,6 +41,7 @@ const PostAd = () => {
       const imageUrls = upload.map((u) => u.url);
 
       await addDoc(collection(db, "ads"), {
+        userId: user.uid,
         title,
         category,
         description,
