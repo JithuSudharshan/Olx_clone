@@ -79,7 +79,7 @@ const PostAd = () => {
       <Navbar />
       <NavBand />
       <div className="post-ad">
-        <button onClick={()=>navigate(-1)} className="back-btn">{`<= Back`}</button>
+        <button onClick={()=>navigate(-2)} className="back-btn">{`<= Back`}</button>
         <h2>Post Your Ad</h2>
         <form onSubmit={handleSubmit} className="post-ad-form">
           <input

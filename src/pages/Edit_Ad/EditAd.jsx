@@ -9,6 +9,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 
+
+
 const EditAd = () => {
   const { isClick_profile } = useAuth();
   const { id } = useParams();
@@ -20,6 +22,8 @@ const EditAd = () => {
     price: "",
   });
   const [loading, setLoading] = useState(true);
+
+
 
   useEffect(() => {
     const fetchAd = async () => {
@@ -39,11 +43,19 @@ const EditAd = () => {
     fetchAd();
   }, [id]);
 
+
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+
+
   const [saving, setSaving] = useState(false);
+
+
+
 
   const handleUpdate = async () => {
     setSaving(true);
@@ -62,7 +74,13 @@ const EditAd = () => {
     }
   };
 
+
+
+
   if (loading) return <p>Loading...</p>;
+
+
+
 
   return (
     <div className="edi-page">
@@ -122,5 +140,6 @@ const EditAd = () => {
     </div>
   );
 };
+
 
 export default EditAd;
