@@ -6,6 +6,7 @@ import Profile from "./pages/Profile/Profile";
 import ProductDetail from "./pages/Product Detail/ProductDetail";
 import MyAds from "./pages/My Ads/MyAds";
 import Sell from "./pages/Sell/Sell";
+import EditAd from "./pages/Edit_Ad/EditAd";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/productdetails/:id" element={<ProductDetail/>} />
         <Route path="/myAds" element={<MyAds/>} />
         <Route path="/sell" element={<Sell/>} />
+        <Route path="/edit/:id" element={<EditAd />} />
       </Routes>
     </div>
   );

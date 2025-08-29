@@ -8,10 +8,12 @@ import NavBand from "../../components/Navband/NavBand.jsx";
 import BrandFooter from "../../components/Footer/BrandFooter.jsx";
 import { uploadManyToCloudinary } from "../../Cloudinary/cloudinary.js";
 import cross_icon from "../../assets/Images/profile page-icons/x-button.png";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthProvider.jsx";
+import Dropdown from "../../components/Nav-DropDown/Dropdown.jsx";
 
 const PostAd = () => {
+
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
@@ -20,24 +22,32 @@ const PostAd = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const {user}= useAuth();
-
+  const {user,isClick_profile }= useAuth();
   const storage = getStorage();
+
+
 
   const handleRemove = (index) => {
     setImages((prev) => prev.filter((_, i) => i !== index));
   };
 
+
+
   const handleImageChange = (e) => {
     setImages((prev) => [...prev, ...e.target.files]);
   };
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      console.log("Uploading images...");
       const upload = await uploadManyToCloudinary(images);
+      console.log("Upload response:", upload);
       const imageUrls = upload.map((u) => u.url);
 
       await addDoc(collection(db, "ads"), {
@@ -133,6 +143,7 @@ const PostAd = () => {
       <div className="Brand-footer">
         <BrandFooter />
       </div>
+      <div>{isClick_profile && <Dropdown />}</div>
     </div>
   );
 };
