@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router";
 import Login from "./components/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import ProductDetail from "./pages/Product Detail/ProductDetail";
+import MyAds from "./pages/My Ads/MyAds";
+import Sell from "./pages/Sell/Sell";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
         <Route path="/login" element={<Login />}/>
         <Route path="/profile" element={<Profile/>} />
         <Route path="/productdetails/:id" element={<ProductDetail/>} />
+        <Route path="/myAds" element={<MyAds/>} />
+        <Route path="/sell" element={<Sell/>} />
       </Routes>
     </div>
   );

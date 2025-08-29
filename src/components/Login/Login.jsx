@@ -6,31 +6,27 @@ import Cross_icon from "../../assets/Images/profile page-icons/x-button.png";
 import { useAuth } from "../../context/AuthProvider";
 
 const Login = () => {
-  const [loggedState, setLoggedState] = useState("Sign Up");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedState, setLoggedState] = useState("Sign Up");
 
-  const { setIsClickLogin , setIsLoggedIn} = useAuth();
+  const { setIsClickLogin} = useAuth();
 
   //Authentication on FormData using Firebase
   const user_auth = async (event) => {
     event.preventDefault();
     try {
       if (loggedState === "Sign In") {
-      await login(email, password);
-      setIsClickLogin(false);
-      setIsLoggedIn(true);
-
-    } else {
-      await signUp(name, email, password);
-    }
+        await login(email, password);
+        setIsClickLogin(false);
+      } else {
+        await signUp(name, email, password);
+      }
     } catch (error) {
-      console.log(error)
-      alert(error)
+      console.log(error);
+      alert(error);
     }
-
-    
   };
 
   return (

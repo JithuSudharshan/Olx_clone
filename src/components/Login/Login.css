@@ -24,8 +24,8 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 50;
-  display: flex; /* ✅ change: center modal easily */
-  justify-content: center; /* ✅ change: horizontal center */
+  display: flex; 
+  justify-content: center; 
   align-items: center;
 }
 

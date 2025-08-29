@@ -9,9 +9,6 @@
   font-family: Arial, sans-serif;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
-.nav-band{
-  margin-top: 70px;
-}
 .edit-page {
   display: flex;
   flex-direction: column;

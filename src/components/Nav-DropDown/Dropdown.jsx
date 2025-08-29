@@ -16,13 +16,12 @@ import { logOut } from "../../firebase/firebase";
 import { useAuth } from "../../context/AuthProvider";
 
 const Dropdown = () => {
-  const { setIsLoggedIn , setIsClick_profile } = useAuth();
+  const { setIsClick_profile } = useAuth();
 
-  const handleLogOut = async() => {
+  const handleLogOut = () => {
     try {
-      await logOut();
-      setIsClick_profile(false)
-      setIsLoggedIn(false);
+      logOut();
+      setIsClick_profile(false);
     } catch (error) {
       console.log(error);
       alert(error);
@@ -38,10 +37,13 @@ const Dropdown = () => {
         <button>View and edit profile</button>
       </Link>
       <div className="features">
-        <div className="My-ads">
-          <img src={my_ads_icon} alt="" />
-          <p>My-ADS</p>
-        </div>
+        <Link to="/myAds" >
+          <div className="My-ads">
+            <img src={my_ads_icon} alt="" />
+            <p>My-ADS</p>
+          </div>
+        </Link>
+
         <div className="bussiness">
           <img src={bussines_icon} alt="" />
           <p>Buy Bussinees Package</p>

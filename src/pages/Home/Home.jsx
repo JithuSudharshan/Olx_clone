@@ -16,15 +16,16 @@ const Home = () => {
   return (
     <div className="home">
       <div className="nav-bar">
-        <NavBar
-        
-        />
+        <NavBar/>
       </div>
-
+      
       {isClick_profile?<Dropdown/>:<></>}
       
       <div onClick={()=>setIsClick_profile(false)} className="home-content">
-        <NavBand />
+        <div className="nav-band">
+          <NavBand />
+        </div>
+        
         <div className="banner-img">
           <div>
             <img src={banner_img} alt="" />
@@ -36,7 +37,7 @@ const Home = () => {
         <Footer />
       </div>
       <div>
-        {isclickLogin?<Login/>:<></>}
+        {isclickLogin && <Login/>}
       </div>
     </div>
   );

@@ -3,9 +3,12 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
-  signOut,
+  signOut
 } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCBE9HZKv8S-MxQpvzaE6cxWBX7rv1Scs",
@@ -30,6 +33,7 @@ const signUp = async (name, email, password) => {
       authProvider: "local",
       email,
     });
+
   } catch (error) {
     console.log(error);
     alert(error);
@@ -47,5 +51,6 @@ const login = async (email, password) => {
 const logOut = () => {
   signOut(auth);
 };
+
 
 export { auth, db, signUp, login, logOut };

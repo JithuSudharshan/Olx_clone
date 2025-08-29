@@ -1,24 +1,40 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useEffect} from "react";
 import AuthContext from "./AuthContext.js";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, login, signUp, logOut } from "../firebase/firebase.js";
 import App from "../App.jsx";
 
 const AuthProvider = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   const [isClick_profile, setIsClick_profile] = useState(false);
   const [isclickLogin, setIsClickLogin] = useState(false);
+  
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <AuthContext.Provider
       value={{
-        isLoggedIn,
-        setIsLoggedIn,
-        isClick_profile,
-        setIsClick_profile,
+        user,
+        login,
+        signUp,
+        logOut,
         isclickLogin,
         setIsClickLogin,
+        isClick_profile,
+        setIsClick_profile,
       }}
     >
-      <App />
+      {!loading && <App />}
     </AuthContext.Provider>
   );
 };

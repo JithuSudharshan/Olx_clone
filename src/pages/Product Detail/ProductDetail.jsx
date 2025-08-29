@@ -19,16 +19,17 @@ import mercedesImg from "../../assets/Images/Products_image/mercedesImg.jpg";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/Navbar/NavBar";
 import NavBand from "../../components/Navband/NavBand";
-import user_icon from "../../assets/Images/Product_details/businessman .png";
-import user_grey from "../../assets/Images/Product_details/user _grey.png"
-import user_blue from "../../assets/Images/Product_details/user_blue.png"
+import user_grey from "../../assets/Images/Product_details/user _grey.png";
 import loc_icon from "../../assets/Images/Product_details/placeholder.png";
-import heart_icon from "../../assets/Images/Product_details/heart.png"
-import share_icon from "../../assets/Images/Product_details/share.png"
+import heart_icon from "../../assets/Images/Product_details/heart.png";
+import share_icon from "../../assets/Images/Product_details/share.png";
+import { useAuth } from "../../context/AuthProvider";
+import Dropdown from "../../components/Nav-DropDown/Dropdown";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [selectedItem, setSelectedItem] = useState(null);
+  const { isClick_profile , setIsClick_profile } = useAuth();
   const productsByCategory = [
     {
       category: "Cars",
@@ -160,20 +161,20 @@ const ProductDetail = () => {
     cat.products.map((p) => ({ ...p, category: cat.category }))
   );
 
-
   // find product by id
   const item = allProducts.find((p) => p.id === parseInt(id));
-  
 
   useEffect(() => {
     setSelectedItem(item);
-    console.log(selectedItem)
+    console.log(selectedItem);
   }, [id]);
 
-  if(selectedItem === null){
-    return(
-      <p>item loading.....</p>
-    )
+  const formatPrice = (price) => {
+    return `₹ ${price.toLocaleString()}`;
+  };
+
+  if (selectedItem === null) {
+    return <p>item loading.....</p>;
   }
 
   return (
@@ -182,7 +183,7 @@ const ProductDetail = () => {
       <div className="navband">
         <NavBand />
       </div>
-      <div className="product-details">
+      <div onClick={()=>setIsClick_profile(false)} className="product-details">
         <img src={heart_icon} alt="" />
         <img src={share_icon} alt="" />
         <div className="product-main">
@@ -201,7 +202,7 @@ const ProductDetail = () => {
           <div className="div-right">
             <div className="price-details">
               <h4>Price</h4>
-              <p>{`₹ ${selectedItem.price}`}</p>
+              <p>{formatPrice(selectedItem.price)}</p>
             </div>
             <div className="seller-info">
               <h3>Seller Information</h3>
@@ -240,6 +241,7 @@ const ProductDetail = () => {
         </p>
       </div>
       <Footer />
+      <div>{isClick_profile  && <Dropdown/>}</div>
     </div>
   );
 };

@@ -1,0 +1,103 @@
+.post-ad {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.back-btn {
+  background: #f5f2f2;
+  border: none;
+  color: grey;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 14px;
+  position: absolute;
+  top: 3%;
+  left: 3.5%;
+}
+.back-btn:hover{
+    background-color:#0240bd;
+    color: #fff;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-ad-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.post-ad-form input,
+.post-ad-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.upload-btn {
+  background: #003399;
+  color: white;
+  padding: 12px;
+  border: 3px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+.upload-btn:hover {
+  border: 3px solid #003399;
+  color: #003399;
+  background-color: white;
+}
+
+.submit-btn {
+  background: #777;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+} 
+.preview-img{
+display: block;
+position: relative;
+  
+}
+.x{
+  width: 15px;
+  z-index: 1000;
+  position: absolute;
+  top: 0%;
+}  
+
