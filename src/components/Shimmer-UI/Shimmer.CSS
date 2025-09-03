@@ -1,0 +1,68 @@
+/* Reuse card styles */
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer animation */
+.shimmer-image,
+.shimmer-line {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Fake image */
+.shimmer-image {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+/* Fake text lines */
+.shimmer-line {
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.shimmer-line.title {
+  width: 70%;
+  height: 20px;
+}
+
+.shimmer-line.desc {
+  width: 90%;
+}
+
+.shimmer-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.shimmer-line.price {
+  width: 40px;
+  height: 20px;
+}
+
+.shimmer-line.button {
+  width: 60px;
+  height: 20px;
+  border-radius: 12px;
+}
+
+/* Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -34,7 +34,7 @@ const NavBar = () => {
 
   return (
     <div className="nav-bar">
-      <img src={logo} alt="" />
+      <img onClick={()=>navigate("/")} src={logo} alt="" />
       <div className="location">
         <img src={search_icon_dark} alt="" />
         <input type="text" placeholder="Ashok Vihar, Delhi" />

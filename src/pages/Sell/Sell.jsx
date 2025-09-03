@@ -13,7 +13,6 @@ import { useAuth } from "../../context/AuthProvider.jsx";
 import Dropdown from "../../components/Nav-DropDown/Dropdown.jsx";
 
 const PostAd = () => {
-
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
@@ -22,23 +21,16 @@ const PostAd = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const {user,isClick_profile }= useAuth();
+  const { user, isClick_profile } = useAuth();
   const storage = getStorage();
-
-
 
   const handleRemove = (index) => {
     setImages((prev) => prev.filter((_, i) => i !== index));
   };
 
-
-
   const handleImageChange = (e) => {
     setImages((prev) => [...prev, ...e.target.files]);
   };
-
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -79,7 +71,10 @@ const PostAd = () => {
       <Navbar />
       <NavBand />
       <div className="post-ad">
-        <button onClick={()=>navigate(-2)} className="back-btn">{`<= Back`}</button>
+        <button
+          onClick={() => navigate(-1)}
+          className="back-btn"
+        >{`<= Back`}</button>
         <h2>Post Your Ad</h2>
         <form onSubmit={handleSubmit} className="post-ad-form">
           <input
@@ -89,12 +84,17 @@ const PostAd = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
 
-          <input
-            type="text"
-            placeholder="Category"
+          <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-          />
+            name="category"
+          >
+            <option value="">-- Select Category --</option>
+            <option value="Cars">Cars</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Homes">Homes</option>
+            <option value="Luxury Vehicles">Luxury Vehicles</option>
+          </select>
 
           <textarea
             placeholder="Product Description"
