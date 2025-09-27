@@ -6,7 +6,7 @@
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   position: relative;
 }
 
@@ -26,6 +26,13 @@
 .back-btn:hover{
     background-color:#0240bd;
     color: #fff;
+}
+.select{
+  height: 35px;
+  border: 1px solid #ccc ;
+  color: grey;
+  background-color: white;
+  border-radius: 4px;
 }
 
 h2 {
@@ -93,6 +100,11 @@ textarea {
 display: block;
 position: relative;
   
+}
+.Brand-footer{
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
 }
 .x{
   width: 15px;

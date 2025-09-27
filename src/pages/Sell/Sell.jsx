@@ -25,7 +25,7 @@ const PostAd = () => {
   const storage = getStorage();
 
   const handleRemove = (index) => {
-    setImages((prev) => prev.filter((_, i) => i !== index));
+    setImages((prvs) => prvs.filter((_, i) => i !== index));
   };
 
   const handleImageChange = (e) => {
@@ -67,7 +67,7 @@ const PostAd = () => {
   };
 
   return (
-    <div>
+    <div className="sell-page">
       <Navbar />
       <NavBand />
       <div className="post-ad">
@@ -88,6 +88,7 @@ const PostAd = () => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             name="category"
+            className="select"
           >
             <option value="">-- Select Category --</option>
             <option value="Cars">Cars</option>

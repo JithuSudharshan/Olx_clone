@@ -4,14 +4,17 @@ import olx_logo from "../../assets/Images/Card_image/olx_logo.svg";
 import { signUp, login } from "../../firebase/firebase";
 import Cross_icon from "../../assets/Images/profile page-icons/x-button.png";
 import { useAuth } from "../../context/AuthProvider";
+import eye_icon from "../../assets/eye.png"
+import hidden_icon from "../../assets/hidden.png"
 
 const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedState, setLoggedState] = useState("Sign Up");
+  const [loggedState, setLoggedState] = useState("Sign In");
+  const [eyeClick, setEyeClick] = useState(false)
 
-  const { setIsClickLogin} = useAuth();
+  const { setIsClickLogin } = useAuth();
 
   //Authentication on FormData using Firebase
   const user_auth = async (event) => {
@@ -64,14 +67,23 @@ const Login = () => {
             }}
             placeholder="Email"
           />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            placeholder="Password"
-          />
+          <div className="password-container">
+            <input
+              type={eyeClick ? "password" : "text"}
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              placeholder="Password"
+            />
+            <span
+              className="toggle-icon"
+              onClick={() => setEyeClick((prev) => !prev)}
+            >
+              {eyeClick ? <img src={eye_icon} alt="" /> : <img src={hidden_icon} alt="" />}
+            </span>
+          </div>
+
           <button onClick={user_auth} type="submit">
             {loggedState}
           </button>

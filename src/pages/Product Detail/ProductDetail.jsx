@@ -62,6 +62,7 @@ const ProductDetail = () => {
         <div className="product-main">
           {/* Left Section */}
           <div className="div-left">
+            <h2>{selectedItem.title}</h2>
             <img src={selectedItem.images?.[0]} alt={selectedItem.title} />
             <div className="img-small">
               {selectedItem.images?.map((img, idx) => (

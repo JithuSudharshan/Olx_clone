@@ -7,7 +7,6 @@ import App from "../App.jsx";
 const AuthProvider = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const [isClick_profile, setIsClick_profile] = useState(false);
   const [isclickLogin, setIsClickLogin] = useState(false);
   

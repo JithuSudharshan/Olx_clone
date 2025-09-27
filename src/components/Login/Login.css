@@ -10,22 +10,24 @@
   padding: 30px 25px;
   text-align: center;
   font-family: Arial, sans-serif;
-   z-index: 100;
+  z-index: 100;
 }
-.cancel{
+
+.cancel {
   position: absolute;
   max-width: 20px;
   right: 6%;
   top: 4%;
   cursor: pointer;
 }
+
 .login-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 50;
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -92,4 +94,43 @@
   font-size: 12px;
   color: #777;
   line-height: 1.5;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+.toggle-icon {
+  position: absolute;
+  top: 60%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-icon img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-icon img:hover {
+  opacity: 1;
 }

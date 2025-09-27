@@ -9,10 +9,7 @@ const Profile = () => {
   return (
     <div className="edit-page">
       <Navbar />
-
-      <div className="nav-band">
-        <NavBand />
-      </div>
+      <NavBand />
       <div className="profile-card">
         <img src={profile_pic} alt="" />
         <p>Sam Altman</p>
