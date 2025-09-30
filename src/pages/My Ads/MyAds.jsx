@@ -53,10 +53,10 @@ const MyAds = () => {
       alert("Ad deleted successfully!");
 
       setAds((prevAds) => prevAds.filter((ad) => ad.id !== adId));
-    } catch (error) {}
+    } catch (error) { }
   };
 
-  const handleEdit = (adId)=>{
+  const handleEdit = (adId) => {
     navigate(`/edit/${adId}`)
   }
 
@@ -69,7 +69,9 @@ const MyAds = () => {
           <h1>You haven't posted any ads yet...!</h1>
           <button onClick={() => navigate("/sell")}>Start selling...</button>
         </div>
-        <Footer />
+        <div className="myads-footer">
+          <Footer />
+        </div>
       </div>
     );
 
@@ -88,7 +90,7 @@ const MyAds = () => {
                 <p>{`Description : ${ad.description}`}</p>
                 <p>{`Price : ${ad.price}`}</p>
                 <div className="features">
-                  <img onClick={()=>handleEdit(ad.id)} src={edit_icon} alt="" />
+                  <img onClick={() => handleEdit(ad.id)} src={edit_icon} alt="" />
                   <img
                     onClick={() => handleDlt(ad.id)}
                     src={delete_icon}

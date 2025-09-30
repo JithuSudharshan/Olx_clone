@@ -15,7 +15,7 @@ import { useNavigate } from "react-router";
 
 const NavBar = () => {
   //from useContext
-  const { user, setIsClick_profile, setIsClickLogin } = useAuth();
+  const { user, setIsClick_profile, setIsClickLogin, authMode } = useAuth();
   const navigate = useNavigate()
 
   const open_feautures_Modal = () => {
@@ -24,17 +24,18 @@ const NavBar = () => {
   const open_login_modal = () => {
     setIsClickLogin(true)
   };
-  const handleSellBtn = ()=>{
-    if(user){
+
+  const handleSellBtn = () => {
+    if (user) {
       navigate("/sell")
-    }else{
+    } else {
       setIsClickLogin(true);
     }
   }
 
   return (
     <div className="nav-bar">
-      <img onClick={()=>navigate("/")} src={logo} alt="" />
+      <img onClick={() => navigate("/")} src={logo} alt="" />
       <div className="location">
         <img src={search_icon_dark} alt="" />
         <input type="text" placeholder="Ashok Vihar, Delhi" />
@@ -73,7 +74,7 @@ const NavBar = () => {
               <p>SELL</p>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>

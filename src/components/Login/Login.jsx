@@ -21,11 +21,13 @@ const Login = () => {
     event.preventDefault();
     try {
       if (loggedState === "Sign In") {
-        await login(email, password);
+        await login(email, password)
         setIsClickLogin(false);
       } else {
         await signUp(name, email, password);
+        setLoggedState("Sign In");
       }
+
     } catch (error) {
       console.log(error);
       alert(error);
@@ -69,7 +71,7 @@ const Login = () => {
           />
           <div className="password-container">
             <input
-              type={eyeClick ? "password" : "text"}
+              type={eyeClick ? "text" : "password"}
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);

@@ -9,7 +9,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 
 
-
+//firebase configurations
 const firebaseConfig = {
   apiKey: "AIzaSyCCBE9HZKv8S-MxQpvzaE6cxWBX7rv1Scs",
   authDomain: "olx-clone-9c906.firebaseapp.com",
@@ -18,6 +18,7 @@ const firebaseConfig = {
   messagingSenderId: "615944870412",
   appId: "1:615944870412:web:d327f6af8443623eec2c29",
 };
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
