@@ -34,7 +34,7 @@ const Dropdown = () => {
       </div>
       <h1>SAM ALTMAN</h1>
       <Link to="/profile">
-        <button>View and edit profile</button>
+        <button onClick={() => setIsClick_profile(false)}>View and edit profile</button>
       </Link>
       <div className="features">
         <Link to="/myAds" >
