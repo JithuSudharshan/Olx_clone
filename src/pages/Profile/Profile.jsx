@@ -7,22 +7,30 @@ import Footer from "../../components/Footer/Footer";
 
 const Profile = () => {
   return (
-    <div className="edit-page">
-      <Navbar />
-      <NavBand />
-      <div className="profile-card">
-        <img src={profile_pic} alt="" />
-        <p>Sam Altman</p>
-        <div className="join-date">
-          <p>Member since Dec 2024</p>
-        </div>
-        <div className="followers">
-          <p>0 Followers | 0 Following</p>
-        </div>
-        <p>User verified with </p>
-        <button>Edit Profile</button>
-        <p>Share Profile</p>
+    <div className="profile-page">
+      <div>
+        <Navbar />
       </div>
+      <div>
+        <NavBand />
+      </div>
+      {/* Wrapper for centering */}
+      <div className="profile-wrapper">
+        <div className="profile-card">
+          <img src={profile_pic} alt="profile" />
+          <p>Sam Altman</p>
+          <div className="join-date">
+            <p>Member since Dec 2024</p>
+          </div>
+          <div className="followers">
+            <p>0 Followers | 0 Following</p>
+          </div>
+          <p>User verified with </p>
+          <button>Edit Profile</button>
+          <p>Share Profile</p>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

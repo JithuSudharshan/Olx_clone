@@ -10,7 +10,7 @@ import heart_icon from "../../assets/Images/Product_details/heart.png";
 import share_icon from "../../assets/Images/Product_details/share.png";
 import { useAuth } from "../../context/AuthProvider";
 import Dropdown from "../../components/Nav-DropDown/Dropdown";
-import { doc,getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 
 const ProductDetail = () => {

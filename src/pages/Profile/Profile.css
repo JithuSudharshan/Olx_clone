@@ -1,56 +1,74 @@
-.profile-card {
-  width: 300px;
-  padding: 20px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  background: #fff;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-}
-.edit-page {
+/* Whole profile page */
+.profile-page {
   display: flex;
-  width: 100%;
   flex-direction: column;
   min-height: 100vh;
-  align-items: center;
-  background: #fff;
-  position: relative;
-} 
+  background: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
 
+/* Center wrapper for card */
+.profile-wrapper {
+  flex: 1;
+  /* take available space between navbar and footer */
+  display: flex;
+  justify-content: center;
+  /* horizontal center */
+  align-items: center;
+  /* vertical center */
+  padding: 40px 20px;
+}
+
+/* Profile card styling */
+.profile-card {
+  width: 340px;
+  padding: 25px 20px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile image */
 .profile-card img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  border: 3px solid #002f9f;
 }
 
-.profile-card p {
-  margin: 5px 0;
-  font-size: 16px;
-  font-weight: 500;
+/* Name */
+.profile-card p:first-of-type {
+  font-size: 20px;
+  font-weight: bold;
   color: #111;
+  margin-bottom: 10px;
 }
 
-.profile-card .join-date,
-.profile-card .followers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: #555;
+/* Join date & followers */
+.join-date,
+.followers {
   font-size: 14px;
-  margin: 5px 0;
+  color: #555;
+  margin: 6px 0;
 }
 
-.profile-card .join-date img,
-.profile-card .followers img {
-  width: 18px;
-  height: 18px;
+/* Verification text */
+.profile-card>p {
+  font-size: 14px;
+  color: #444;
+  margin: 8px 0;
 }
 
+/* Button */
 .profile-card button {
   width: 100%;
   background-color: #002f9f;
@@ -58,31 +76,26 @@
   padding: 12px;
   font-size: 15px;
   font-weight: 600;
-  border: 4px solid;
+  border: none;
   border-radius: 6px;
   margin: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
   cursor: pointer;
-}
-
-.profile-card button img {
-  width: 16px;
-  height: 16px;
+  transition: background 0.2s ease;
 }
 
 .profile-card button:hover {
-  border-color: #002f9f;
-  background-color: white;
-  border: 4px solid;
-  color: #002f9f;
+  background-color: #0041d6;
 }
 
+/* Share profile link */
 .profile-card p:last-child {
   color: #002f9f;
   font-size: 14px;
   cursor: pointer;
   margin-top: 5px;
+  transition: text-decoration 0.2s ease;
+}
+
+.profile-card p:last-child:hover {
+  text-decoration: underline;
 }

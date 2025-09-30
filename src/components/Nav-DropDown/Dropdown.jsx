@@ -38,7 +38,7 @@ const Dropdown = () => {
       </Link>
       <div className="features">
         <Link to="/myAds" >
-          <div className="My-ads">
+          <div className="My-ads" onClick={() => setIsClick_profile(false)}>
             <img src={my_ads_icon} alt="" />
             <p>My-ADS</p>
           </div>
